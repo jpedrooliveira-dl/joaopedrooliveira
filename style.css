@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variáveis CSS para cores */
+:root { --ciano: #14FFE9}
+
+:root { --branco: #F2F8FF}
+
+body {
+    background-image: url('./img/fundo.172Z.png');
+    /* background: linear-gradient(135deg, #071821 75%, #14FFE9 100%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--branco);
+}
+
+/* Estilos do cabeçalho */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #071821;
+    padding: 10px 2%;
+}
+
+header a {
+    color: var(--branco);
+    padding: 0 15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+header a:hover {
+    color: var(--ciano);
+}
+
+.cta-button {
+    background-color: var(--ciano);
+    color: #071821;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--ciano);
+    outline: 2px solid var(--ciano);
+}
+
+header img {
+    width: 80px;
+    border: 3px solid var(--ciano);
+    border-radius: 50%;
+}
+
+/* Estilos para o menu hamburguer */
+.menu-toggle-input {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburguer-linha {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--branco);
+    margin: 5px 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+/* Estilos da seção "Sobre" */
+.sobre {
+    padding: 1rem 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+
+.sobre .titulo {
+    color: var(--ciano);
+    font-weight: 700;
+}
+
+.sobre p {
+    color: var(--branco);
+    line-height: 1.6;
+    max-width: 80ch;
+}
+
+.sobre .foto {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--ciano);
+    border-radius: 50%;
+}
+
+/* Media Query para telas menores (ex: celulares) */
+@media (max-width: 768px) {
+    /* Mostra o ícone em telas pequenas */
+    .menu-hamburguer {
+        display: block;
+    }
+
+    /* Esconde o menu de navegação em telas pequenas e o posiciona */
+    .nav {
+        position: absolute;
+        top: 100px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background-color: #071821;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav a {
+        font-size: 1.5rem;
+    }
+
+    /* Mostra o menu quando o checkbox está marcado */
+    #menu-toggle:checked ~ .nav {
+        right: 0;
+    }
+
+    /* Animação do ícone para 'X' */
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Reorganiza a seção "Sobre" */
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-direita {
+        margin-top: 2rem;
+    }
+
+    .projetos {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.sobre-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.redesSociais {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Estilos da seção "Projetos" */
+.projetos {
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.projetos .titulo {
+    color: var(--branco);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.projetos-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: rgba(7, 24, 33, 0.8); /* Um fundo escuro semi-transparente */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--ciano);
+}
+
+.projeto-card h3 {
+    color: var(--ciano);
+    margin-top: 0;
+}
+
+.projeto-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.projeto-card .cta-button {
+    align-self: flex-start; /* Alinha o botão ao início */
+}
+
+
+footer {
+    background-color: #071821;
+    margin: 0;
+    padding: 16px;
+    padding: 1.5rem 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 0.5rem; /* Adiciona espaço entre os parágrafos */
+    text-align: center; /* Garante que o texto dentro dos parágrafos também seja centralizado */
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão dos parágrafos */
+}
+
+footer a {
+    color: var(--ciano); /* Usa a cor de destaque do seu site */
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Efeito sutil no hover */
+}
