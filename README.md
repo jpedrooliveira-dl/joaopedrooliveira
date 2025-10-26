@@ -4,8 +4,7 @@
 
 Bem-vindo ao repositório do meu site de portfólio pessoal! Este projeto foi criado para ser o meu cartão de visitas digital, um lugar para apresentar minhas habilidades, projetos e minha jornada no mundo do desenvolvimento web.
 
-![Prévia do site](./img/preview.png) 
-*(Sugestão: adicione uma captura de tela do seu site com o nome `preview.png` na pasta `img` para uma melhor visualização)*
+![Prévia do site](./img/foto_reademe.png) 
 
 ---
 
