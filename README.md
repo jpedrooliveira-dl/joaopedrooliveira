@@ -4,8 +4,6 @@
 
 Bem-vindo ao repositório do meu site de portfólio pessoal! Este projeto foi criado para ser o meu cartão de visitas digital, um lugar para apresentar minhas habilidades, projetos e minha jornada no mundo do desenvolvimento web.
 
-![Prévia do site](./img/foto_reademe.png) 
-
 ---
 
 ## 🚀 Status do Projeto: Versão Beta 1.0
