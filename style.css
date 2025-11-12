@@ -261,3 +261,55 @@ footer a {
 footer a:hover {
     text-decoration: underline; /* Efeito sutil no hover */
 }
+
+
+
+/* Estilos da seção "serviços" */
+.servicos {
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.servicos .titulo {
+    color: var(--branco);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.servicos-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.servicos-card {
+    background-color: rgba(7, 24, 33, 0.8); /* Um fundo escuro semi-transparente */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicos-card:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--ciano);
+}
+
+.servicos-card h3 {
+    color: var(--ciano);
+    margin-top: 0;
+}
+
+.servicos-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.servicos-card .cta-button {
+    align-self: flex-start; /* Alinha o botão ao início */
+}
