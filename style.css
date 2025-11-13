@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Variáveis CSS para cores */
 :root { --ciano: #14FFE9}
 
@@ -15,15 +19,26 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: var(--branco);
+    padding-top: 106px; /* Adiciona espaço no topo para não esconder o conteúdo sob o header */
 }
 
 /* Estilos do cabeçalho */
 header{
+    position: fixed; /* Fixa o header no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    z-index: 1002; /* Garante que o header fique acima de outros elementos */
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #071821;
     padding: 10px 2%;
+    border-bottom-left-radius: 20px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 20px; /* Arredonda o canto inferior direito */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil */
 }
 
 header a {
@@ -185,7 +200,7 @@ header img {
 
 /* Estilos da seção "Projetos" */
 .projetos {
-    padding: 4rem 3rem;
+    padding: 6rem 3rem;
     text-align: center;
 }
 
@@ -266,7 +281,7 @@ footer a:hover {
 
 /* Estilos da seção "serviços" */
 .servicos {
-    padding: 4rem 3rem;
+    padding: 12rem 3rem;
     text-align: center;
 }
 
