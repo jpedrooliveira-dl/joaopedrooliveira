@@ -20,6 +20,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--branco);
     padding-top: 106px; /* Adiciona espaço no topo para não esconder o conteúdo sob o header */
+    text-decoration: none;
 }
 
 /* Estilos do cabeçalho */
@@ -59,6 +60,9 @@ header a:hover {
     color: #071821;
     padding: 8px 20px;
     border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -248,6 +252,11 @@ header img {
     align-self: flex-start; /* Alinha o botão ao início */
 }
 
+.contato-card .cta-button img {
+    width: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: auto;
+}
+
 
 footer {
     background-color: #071821;
@@ -327,4 +336,76 @@ footer a:hover {
 
 .servicos-card .cta-button {
     align-self: flex-start; /* Alinha o botão ao início */
+}
+
+/* contato*/
+
+.contato {
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.contato .titulo {
+    color: var(--branco);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contato-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contato-card {
+    background-color: rgba(7, 24, 33, 0.8); /* Um fundo escuro semi-transparente */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contato-card:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--ciano);
+}
+
+.contato-card h3 {
+    color: var(--ciano);
+    margin-top: 0;
+}
+
+.contato-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.contato-card .cta-button {
+    align-self: center; /* Alinha o botão ao centro */
+}
+
+#minhaImagem {
+    width: 100px;
+    display: flex;
+}
+
+.contato .outros-contatos {
+    /* A propriedade 'width: 12px;' foi removida pois limitava o conteúdo. */
+    margin-top: 1rem; /* Adiciona um espaço acima */
+}
+
+.outros-contatos a {
+    color: var(--branco);
+    text-decoration: none; /* Adiciona o sublinhado ao link */
+}
+
+.outros-contatos a:hover {
+    color: var(--ciano);
+    text-shadow: 2px 2px 5px #000000;
 }
