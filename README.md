@@ -1,14 +1,14 @@
 # Portfólio Pessoal - João Pedro
 
-![Versão](https://img.shields.io/badge/version-beta%201.0-blue)
+![Versão](https://img.shields.io/badge/version-versao%20oficial%201.0-green)
 
 Bem-vindo ao repositório do meu site de portfólio pessoal! Este projeto foi criado para ser o meu cartão de visitas digital, um lugar para apresentar minhas habilidades, projetos e minha jornada no mundo do desenvolvimento web.
 
 ---
 
-## 🚀 Status do Projeto: Versão Beta 1.0
+## 🚀 Status do Projeto: Versão Oficial 1.0
 
-Esta é a primeira versão beta do meu portfólio. Muitas das funcionalidades principais já estão implementadas, mas o projeto está em constante evolução.
+Esta é a primeira versão oficial do meu portfólio. As funcionalidades principais estão implementadas e o site está pronto para ser visitado! O projeto continuará em evolução com novas funcionalidades e melhorias.
 
 **O que ainda está em desenvolvimento:**
 - A seção de contato ainda não possui um formulário funcional.
