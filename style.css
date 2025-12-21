@@ -131,6 +131,7 @@ header img {
     border-radius: 50%;
 }
 
+
 /* Media Query para telas menores (ex: celulares) */
 @media (max-width: 768px) {
     /* Mostra o ícone em telas pequenas */
