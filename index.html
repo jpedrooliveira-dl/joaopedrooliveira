@@ -4,14 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de João Pedro, Desenvolvedor Fullstack e estudante de Sistemas de Informação. Especializado em desenvolvimento web, JavaScript, Node.js e Express.">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jpedrooliveira-dl.github.io/site-pessoal/">
+    <meta property="og:title" content="João Pedro - Desenvolvedor Fullstack">
+    <meta property="og:description" content="Portfólio de João Pedro, Desenvolvedor Fullstack e estudante de Sistemas de Informação. Especializado em desenvolvimento web, JavaScript, Node.js e Express.">
+    <meta property="og:image" content="./assets/img/foto.jpg">
+
     <title>João Pedro - Desenvolvedor</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/png" href="./img/LOGO.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./assets/img/LOGO.png">
+    <script src="https://kit.fontawesome.com/436afc6627.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <a href="./index.html"><img src="./img/foto.jpg" class="Logo" alt="Logo"></a>
+        <a href="./index.html"><img src="./assets/img/foto.jpg" class="Logo" alt="Logo"></a>
         <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
         <label for="menu-toggle" class="menu-hamburguer">
             <span class="hamburguer-linha"></span>
@@ -23,6 +33,9 @@
             <a href="#projetos">Projetos</a>
             <a href="#servicos">Serviços</a>
             <a href="#contato" class="cta-button">Contato</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                <i id="theme-icon" class="fas fa-sun"></i>
+            </button>
         </nav>
 
     </header>
@@ -31,51 +44,126 @@
 
         <!-- Sobre nos -->
 
-        <section class="sobre" id="sobre">
-            <div class="sobre-texto">
-                <h1 class="titulo" id="typing-effect">Olá, Meu nome é João Pedro</h1>
+        <section class="home" id="home">
+            <div class="home-texto">
+                <div class="badge">Disponível para oportunidades</div>
+                <h1 class="titulo" id="typing-effect">Olá, eu sou <span class="highlight">João Pedro</span></h1>
+                <h2>Desenvolvedor Fullstack | Sistema de Informação</h2>
                 <p>Sou estudante de Sistemas de Informação, aprendendo cada dia mais sobre desenvolvimento web. <br> Estou
-                    sempre em busca de novos conhecimentos e desafios para aprimorar minhas habilidades em tecnologia
-                </p>
+                    sempre em busca de novos conhecimentos e desafios para aprimorar minhas habilidades em tecnologia.</p>
+        
+                <div class="home-botao">
+                    <a href="https://github.com/jpedrooliveira-dl" target="_blank" class="btn btn-github">
+                        <i class="fa-brands fa-github"></i> Meu Github
+                    </a>
+                    
+                    <a href="./assets/cv/CurriculodoJoaoPedro270226.pdf" download="CurriculodoJoaoPedro270226.pdf" class="btn btn-curriculo">
+                        <i class="fa-solid fa-download"></i> Baixar Currículo
+                    </a>
+                </div>
             </div>
-
-            <div class="sobre-direita">
-                <img src="./img/foto.jpg" class="foto" alt="foto">
-                <div class="redesSociais">
-                    <a href="https://www.instagram.com/joaopedroodl/" target="_blank"><img class="icocRedes"
-                            src="./img/icons/instagram.png" alt="Intagram"></a>
-                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-oliveira-duarte-lage-14a1a7352/"
-                        target="_blank"><img class="icocRedes" src="./img/icons/linkedin.png" alt="Link"></a>
-                    <a href="https://github.com/jpedrooliveira-dl" target="_blank"><img class="icocRedes"
-                            src="./img/icons/github.png" alt="GitHub"></a>
+        
+            <div class="home-direita">
+                <img src="./assets/img/foto.jpg" class="foto" alt="foto">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/joaopedroodl/" target="_blank">
+                        <i class="fa-brands fa-instagram icocRedes"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-oliveira-duarte-lage-14a1a7352/" target="_blank">
+                        <i class="fa-brands fa-linkedin icocRedes"></i></a>
+                    <a href="https://github.com/jpedrooliveira-dl" target="_blank">
+                        <i class="fa-brands fa-github icocRedes"></i></a>
                 </div>
             </div>
         </section>
+
+        <!-- sobre -->
+
+        <section id="sobre" class="about animate-on-scroll">
+        <div class="container animate-on-scroll">
+            <h2 class="section-title">Sobre <span class="highlight">Mim</span></h2>
+            <div class="about-content">
+                <p>Sou estudante do <strong>6º semestre de Sistemas de Informação</strong>, com um foco profundo em
+                    desenvolvimento Web. Minha jornada de estudos atual é inteiramente dedicada ao ecossistema
+                    <strong>JavaScript</strong>, focando em me tornar um desenvolvedor Fullstack proficiente com
+                    <strong>Node.js e Express</strong>.</p>
+                <p>Gosto de entender o funcionamento das aplicações de ponta a ponta: desde a criação de interfaces
+                    responsivas e acessíveis no frontend até a modelagem de bancos de dados e construção de APIs seguras
+                    no backend.</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- skills -->
+
+        <section id="skills" class="skills bg-alt animate-on-scroll">
+        <div class="container animate-on-scroll">
+            <h2 class="section-title">Minhas <span class="highlight">Habilidades</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-html5 skill-icon"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt skill-icon"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fab fa-js skill-icon"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-node-js skill-icon"></i><span>Node.js</span></div>
+                <div class="skill-card"><i class="fas fa-server skill-icon"></i><span>Express.js</span></div>
+                <div class="skill-card"><i class="fab fa-git-alt skill-icon"></i><span>Git & GitHub</span></div>
+                <div class="skill-card"><i class="fas fa-database skill-icon"></i><span>SQL / BD</span></div>
+                <div class="skill-card"><i class="fas fa-laptop-code skill-icon"></i><span>APIs REST</span></div>
+            </div>
+        </div>
+    </section>
 
         <!-- Projetos -->
 
         <section class="projetos" id="projetos">
             <h2 class="titulo">Meus Projetos</h2>
-            <div class="projetos-grid">
+            <div class="projetos-grid animate-on-scroll">
                 <div class="projeto-card">
+                    <img class="img-projeto" src="./assets/img/jp-sellection.png" alt="print projeto">
                     <h3>Jp-sellection</h3>
-                    <p>JP Sellection é uma vitrine digital mockup que simula a plataforma de uma concessionária de luxo, destacando habilidades em front-end e UI/UX</p>
-                    <a href="https://github.com/jpedrooliveira-dl/jp-sellection" target="_blank" class="cta-button">Ver Projeto</a>
+                    <p>JP Sellection é uma vitrine digital mockup que simula a plataforma de uma concessionária de luxo,
+                        destacando habilidades em front-end e UI/UX.</p>
+                    <div class="tech-tags">
+                         <span>HTML</span><span>CSS</span><span>JavaScript puro</span>
+                    </div>
+                    <a href="https://github.com/jpedrooliveira-dl/jp-sellection" target="_blank" class="cta-button">Ver
+                        Projeto</a>
                 </div>
-                <div class="projeto-card">
+                <div class="projeto-card animate-on-scroll">
+                    <img class="img-projeto" src="./assets/img/calculadora-imc.png" alt="print projeto">
                     <h3>Calculadora de IMC</h3>
                     <p>A Calculadora de IMC é um projeto web simples e responsivo que permite calcular o Índice de Massa
                         Corporal (IMC) de forma rápida e personalizada, mostrando ao usuário sua classificação de acordo
                         com a OMS. Desenvolvida em HTML, CSS e JavaScript, a ferramenta inclui uma página explicativa
                         sobre o IMC e oferece uma interface amigável e moderna.</p>
+                    <div class="tech-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript puro</span>
+                    </div>
                     <a href="https://github.com/jpedrooliveira-dl/calcularIMC" target="_blank" class="cta-button">Ver
                         Projeto</a>
                 </div>
-                <div class="projeto-card">  
+                <div class="projeto-card animate-on-scroll">
+                    <img class="img-projeto" src="./assets/img/qualicity.png" alt="print projeto">
                     <h3>QualiCity</h3>
-                    <p>Aplicação web que usa a geolocalização do navegador e a API-Ninjas Geocoding para converter coordenadas em nomes de cidades, demonstrando integração de APIs no frontend.
-</p>
+                    <p>Aplicação web que usa a geolocalização do navegador e a API-Ninjas Geocoding para converter coordenadas
+                        em nomes de cidades, demonstrando integração de APIs no frontend.
+                    </p>
+                    <div class="tech-tags">
+                        <span>JavaScript</span><span>Fetch API</span><span>Geolocalização</span>
+                    </div>
                     <a href="https://github.com/jpedrooliveira-dl/QualiCity" target="_blank" class="cta-button">Ver
+                        Projeto</a>
+                </div>
+                
+                <div class="projeto-card animate-on-scroll">
+                    <div class="wip-badge">🚧 Em desenvolvimento</div>
+                    <img class="img-projeto" src="./assets/img/KnowledgeBase.png" alt="print projeto">
+                    <h3>Knowledge Base</h3>
+                    <p>Página interativa para pesquisar e visualizar informações sobre linguagens de programação,
+                            frameworks e ferramentas de tecnologia.
+                    </p>
+                    <div class="tech-tags">
+                         <span>HTML</span><span>CSS</span><span>JavaScript puro</span>
+                    </div>
+                    <a href="https://github.com/jpedrooliveira-dl/knowledge-base" target="_blank" class="cta-button">Ver
                         Projeto</a>
                 </div>
             </div>
@@ -86,45 +174,44 @@
         
         <section class="servicos" id="servicos">
             <h2 class="titulo">Meus serviços</h2>
-            <div class="servicos-grid">
+            <div class="servicos-grid animate-on-scroll">
 
                 <!-- 1 -->
                 <div class="servicos-card">
-                    <h4>Um site para você ou para sua empresa 💻🛜</h4>
-                    <img src="" alt="">
-                    <p>Crio sites profissionais, modernos, otimizados e responsivos para atrair clientes e impulsionar o seu 
-                        negócio na
-                        internet. Chegou a hora de ter uma presença online que gera resultados.</p>
+                    <h4>Desenvolvimento Web Institucional</h4>
+                    <p>Crio sites profissionais, modernos, otimizados e responsivos para atrair clientes e impulsionar o seu negócio na internet. Chegou a hora de ter uma presença online que gera resultados.</p>
                 </div>
 
                 <!-- 2 -->
                 <div class="servicos-card">
-                    <h4>Menu para seu restaurante ou Hamburgeria 🍔🍕</h4>
-                    <img src="" alt="">
+                    <h4>Menu para seu restaurante ou Hamburgueria</h4>
                     <p>Transforme a experiência do seu cliente com um cardápio digital moderno e interativo. Crio menus otimizados, fáceis de usar e com fotos de alta qualidade para impulsionar suas vendas e agilizar o atendimento. Aumente o ticket médio e modernize seu negócio.</p>
                 </div>
 
                 <!-- 3 -->
                 <div class="servicos-card">
-                    <h4>Formatação e Backups 💾🔄</h4>
-                    <img src="" alt="">
-                    <p>Seu computador está lento, travando ou com vírus? Realizo a formatação completa do sistema operacional para
-                        restaurar a velocidade e performance original da sua máquina. O serviço inclui backup seguro de todos os
-                        seus arquivos importantes antes do procedimento, garantindo que você não perca fotos, documentos ou trabalhos.
-                        Recupere a eficiência sem dor de cabeça!</p>
+                    <h4>Manutenção e Infraestrutura TI</h4>
+                    <p>Serviços de formatação, otimização de sistemas operacionais e rotinas de backup seguro, garantindo a integridade dos dados e a performance dos equipamentos.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contato -->
-         <section class="contato" id="contato">
+         <section class="contato animate-on-scroll" id="contato">
             <h2 class="titulo">Contato</h2>
             <div class="contato-grid">
                 <div class="contato-card">
-                <h4>Entre em contato pelo link abaixo</h4>
-                <a href="https://wa.me/message/NLCUHF3J6A3QM1" target="_blank" class="cta-button"><img id="minhaImagem" src="./img/whatsapp-preto.png" alt="Logo whatsapp"></a>
+                <h4>Vamos construir algo incrível juntos?</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/joaopedroodl/" target="_blank">
+                        <i class="fa-brands fa-instagram icocRedes"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-de-oliveira-duarte-lage-14a1a7352/" target="_blank">
+                        <i class="fa-brands fa-linkedin icocRedes"></i></a>
+                    <a href="https://github.com/jpedrooliveira-dl" target="_blank">
+                        <i class="fa-brands fa-github icocRedes"></i></a>
+                </div>
                 <div class="outros-contatos">
-                <p>Ou se preferir:  <span class="contato-email"><a href="joaopedrooliveiradl@gmail.com">joaopedroo.dev@protonmail.com</a></span> | Instagram: <a href="https://www.instagram.com/joaopedroodl/" target="_blank">joaopedroodl</a></p>
+                <p>E-mail:  <span class="contato-email"><a href="mailto:joaopedroo.dev@protonmail.com">joaopedroo.dev@protonmail.com</a></span></p>
                 </div>
             </div>
             </div>
@@ -132,11 +219,11 @@
 
 
         <footer>
-            <p>&copy;   2025 - Joao Pedro</p>
-            <p>Contatos: joaopedroo.dev@protonmail.com
+            <p>&copy; 2026 - João Pedro. Desenvolvido com dedicação ☕</p>
+            <p>Contatos: joaopedroo.dev@protonmail.com</p>
         </footer>
     </main>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

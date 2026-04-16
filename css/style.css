@@ -1,0 +1,717 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tema Escuro (Padrão - estilo Linear) */
+/* Tema Escuro */
+:root {
+    --bg-color: #0f172a;
+    --bg-alt-color: #1e293b;
+    --surface-color: #111118;
+    --surface-hover: #1e1e28;
+    --text-color: #f8fafc;
+    --text-primary: #f0f0ff;
+    --text-secondary: #8b8ba8;
+    --text-light: #94a3b8;
+    --primary-color: #3b82f6;
+    --primary-hover: #1e40af;
+    --secondary-color: #334155;
+    --secondary-hover: #475569;
+    --primary-glow: rgba(99, 102, 241, 0.25);
+    --border-color: rgba(255, 255, 255, 0.07);
+    --header-bg: rgba(10, 10, 15, 0.8);
+    --ciano: #3b82f6;
+    --branco: #f0f0ff;
+    --green-badge: #10b981;
+    --green-badge-bg: rgba(16, 185, 129, 0.08);
+    --green-badge-border: rgba(16, 185, 129, 0.2);
+    --card-bg: #1e293b;
+    --bg-alt-color: #1e293b;
+    --transition: all 0.3s ease;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+    --bg-color: #fafafa;
+    --bg-alt-color: #f8fafc;
+    --surface-color: #ffffff;
+    --surface-hover: #f4f4f7;
+    --text-color: #0f172a;
+    --text-primary: #0d0d1a;
+    --text-secondary: #5a5a72;
+    --text-light: #64748b;
+    --primary-color: #1e3a8a;
+    --primary-hover: #60a5fa;
+    --secondary-color: #e2e8f0;
+    --secondary-hover: #cbd5e1;
+    --primary-glow: rgba(79, 70, 229, 0.15);
+    --border-color: rgba(0, 0, 0, 0.07);
+    --header-bg: rgba(250, 250, 250, 0.85);
+    --ciano: #1e3a8a;
+    --branco: #0d0d1a;
+    --green-badge: #059669;
+    --green-badge-bg: rgba(5, 150, 105, 0.07);
+    --green-badge-border: rgba(5, 150, 105, 0.2);
+    --card-bg: #ffffff;
+    --bg-alt-color: #f8fafc;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 0%, rgba(94, 106, 210, 0.05) 0%, transparent 50%);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    padding-top: 106px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+/* Estilos do cabeçalho */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    backdrop-filter: blur(10px);
+    z-index: 1002; /* Garante que o header fique acima de outros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(var(--bg-color), 0.95);
+    padding: 10px 2%;
+    border-bottom-left-radius: 20px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 20px; /* Arredonda o canto inferior direito */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil */
+}
+
+header a {
+    color: var(--branco);
+    padding: 0 15px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
+header a:hover {
+    color: var(--primary-hover);
+}
+
+
+.cta-button {
+    /* background-color: var(--primary-color); */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    outline: 2px solid var(--primary-color);
+}
+
+header img {
+    width: 80px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Container de navegação para alinhar os itens no desktop */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Estilos para o menu hamburguer */
+.menu-toggle-input {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburguer-linha {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    margin: 5px 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+/* Botão Tema */
+.theme-toggle {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1005;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-left: 15px; /* Adiciona um espaço harmonioso entre o botão de contato e o toggle */
+}
+
+.theme-toggle:hover {
+    background: var(--surface-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Tamanho do ícone de tema */
+#theme-icon {
+    font-size: 1.5rem; /* Altere este valor para o tamanho desejado (ex: 24px, 2rem) */
+}
+
+#theme-icon:hover {
+    color: var(--primary-color);
+}
+
+/* Estilos da seção "home" */
+.home {
+    padding: 4rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(80vh - 106px);
+    margin-top: 2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #10b981;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.home .titulo {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.home h2 {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.home p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 80ch;
+}
+
+.home .foto {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: morph 8s ease-in-out infinite;
+}
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5;
+    transition: var(--transition);
+    border: none;
+    text-decoration: none;
+}
+
+.btn-github {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    margin-right: 0.5rem;
+}
+
+.btn-github:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-curriculo {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-curriculo:hover {
+    background-color: var(--secondary-hover);
+}
+
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* skill */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.bg-alt {
+    background-color: #1e293b;
+}
+
+.highlight { color: var(--primary-color); }
+.bg-alt { background-color: var(--bg-alt-color); }
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    padding-bottom: 2rem;
+}
+
+.about-content p { margin-bottom: 1rem; }
+.about-content strong { color: var(--text-color); }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0 3rem 0;
+    margin: 0 5rem 0 5rem;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+
+/* Media Query para telas menores (ex: celulares) */
+@media (max-width: 768px) {
+    /* Mostra o ícone em telas pequenas */
+    .menu-hamburguer {
+        display: block;
+    }
+
+    /* Esconde o menu de navegação em telas pequenas e o posiciona */
+    .nav {
+        position: absolute;
+        top: 100px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav a {
+        font-size: 1.5rem;
+    }
+    
+    /* Ajusta o botão de tema no menu mobile */
+    .theme-toggle {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    /* Mostra o menu quando o checkbox está marcado */
+    #menu-toggle:checked ~ .nav {
+        right: 0;
+    }
+
+    /* Animação do ícone para 'X' */
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked ~ .menu-hamburguer .hamburguer-linha:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Reorganiza a seção "home" */
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-github {
+        margin-bottom: 1rem;
+    }
+
+    .home-direita {
+        margin-top: 2rem;
+    }
+
+    .projetos {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.home-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.redesSociais {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Estilos da seção "Projetos" */
+.projetos {
+    padding: 6rem 3rem;
+    text-align: center;
+}
+
+.img-projeto {
+    border-bottom: 1px solid var(--text-primary);
+    border-radius: 15px 15px 0 0;
+}
+
+.wip-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f59e0b;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.projetos .titulo {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.projetos-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--card-bg); /* Um fundo escuro semi-transparente */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover,
+.projeto-card.show:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--primary-color);
+}
+
+.projeto-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.projeto-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.projeto-card .cta-button {
+    align-self: flex-start; /* Alinha o botão ao início */
+}
+
+.contato-card .cta-button img {
+    width: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: auto;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags span {
+    background-color: var(--bg-alt-color);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+
+footer {
+    background-color: var(--bg-alt-color);
+    margin: 0;
+    padding: 16px;
+    padding: 1.5rem 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 0.5rem; /* Adiciona espaço entre os parágrafos */
+    text-align: center; /* Garante que o texto dentro dos parágrafos também seja centralizado */
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão dos parágrafos */
+}
+
+footer a {
+    color: var(--primary-color); /* Usa a cor de destaque do seu site */
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Efeito sutil no hover */
+}
+
+
+
+/* Estilos da seção "serviços" */
+.servicos {
+    padding: 12rem 3rem;
+    text-align: center;
+}
+
+.servicos .titulo {
+    color: var(--branco);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.servicos-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.servicos-card {
+    background-color: var(--bg-alt-color); /* Um fundo escuro semi-transparente */
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicos-card:hover,
+.servicos-card.show:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--primary-color);
+}
+
+.servicos-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.servicos-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.servicos-card .cta-button {
+    align-self: flex-start; /* Alinha o botão ao início */
+}
+
+/* contato*/
+
+.contato {
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.contato .titulo {
+    color: var(--branco);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contato-grid {
+    display: grid;
+    /* Cria colunas responsivas. Cada coluna terá no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contato-card {
+    background-color: var(--bg-alt-color); /* Um fundo escuro semi-transparente */
+    border: 1px solid var(--text-light);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contato-card:hover,
+.contato-card.show:hover {
+    transform: translateY(-10px); /* Efeito de "levantar" o card */
+    border-color: var(--primary-color);
+}
+
+.contato-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.contato-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o  espaço disponível */
+    margin-bottom: 1.5rem;
+}
+
+.contato-card .cta-button {
+    align-self: center; /* Alinha o botão ao centro */
+}
+
+#minhaImagem {
+    width: 100px;
+    display: flex;
+}
+
+.contato .outros-contatos {
+    /* A propriedade 'width: 12px;' foi removida pois limitava o conteúdo. */
+    margin-top: 1rem; /* Adiciona um espaço acima */
+}
+
+.outros-contatos a {
+    color: var(--branco);
+    text-decoration: none; /* Adiciona o sublinhado ao link */
+}
+
+.outros-contatos a:hover {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px #000000;
+}
+
+/* --- Animações de Scroll --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Desloca o elemento um pouco para baixo inicialmente */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0); /* Retorna o elemento para a posição original */
+}
