@@ -606,6 +606,7 @@ footer a:hover {
     border-radius: 10px;
     padding: 1.5rem;
     text-align: left;
+    position: relative;
     transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -653,11 +654,12 @@ footer a:hover {
 }
 
 .contato-card {
-    background-color: var(--bg-alt-color); /* Um fundo escuro semi-transparente */
+    background-color: var(--bg-alt-color);
     border: 1px solid var(--text-light);
     border-radius: 10px;
     padding: 1.5rem;
     text-align: left;
+    position: relative;
     transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
