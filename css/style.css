@@ -578,6 +578,17 @@ footer a:hover {
     text-decoration: underline; /* Efeito sutil no hover */
 }
 
+.upgrade {
+    margin-top: 1rem; /* Adiciona um espaço acima do texto de atualização */
+    font-size: 0.85rem; /* Tamanho de fonte menor para dar menos destaque */
+    color: var(--text-light); /* Cor mais suave */
+}
+
+.date-atualizacao {
+    font-weight: 600; /* Deixa a data em negrito */
+    color: var(--text-secondary); /* Cor um pouco mais destacada que o texto ao redor */
+}
+
 
 
 /* Estilos da seção "serviços" */
